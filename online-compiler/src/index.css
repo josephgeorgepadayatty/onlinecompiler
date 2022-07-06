@@ -97,3 +97,21 @@ h4{
 .run-btn:active{
   background-color: #ee4c49;
 }
+
+.beautify-btn{
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  width: 100px;
+  height: 40px;
+  font-size: 22px;
+  font-weight: bold;
+  background-color: #ee4c49;
+  border: none;
+  border-radius: 4px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.beautify-btn:active{
+  background-color: #ee4c49;
+}

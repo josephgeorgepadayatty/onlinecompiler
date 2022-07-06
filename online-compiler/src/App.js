@@ -4,6 +4,7 @@ import Editor from "@monaco-editor/react";
 import Navbar from './components/Navbar';
 import Axios from 'axios';
 import spinner from './spinner.svg';
+import beautify from 'beautify';
  
 function App() {
  
@@ -50,7 +51,26 @@ function App() {
       setLoading(false);
     })
   }
+
  
+  function beautify_fun() {
+    console.log(userCode)
+    let code=beautify(userCode, {format: 'json'})
+    setUserCode(code);
+    console.log(code)
+
+ 
+    // // Post request to beautify endpoint
+    // Axios.post(`http://localhost:8000/beautify`, {
+    //   code: userCode,
+    //    }).then((res) => {
+    //   setUserCode(res.data.code);
+    // }).then(() => {
+    //   setLoading(false);
+    // })
+  }
+
+
   // Function to clear the output screen
   function clearOutput() {
     setUserOutput("");
@@ -77,6 +97,9 @@ function App() {
           />
           <button className="run-btn" onClick={() => compile()}>
              Run
+          </button>
+          <button className="beautify-btn"  onClick={() => beautify_fun()}>
+          Beautify
           </button>
         </div>
         <div className="right-container">
