@@ -59,16 +59,8 @@ function App() {
     setUserCode(code);
     console.log(code)
 
- 
-    // // Post request to beautify endpoint
-    // Axios.post(`http://localhost:8000/beautify`, {
-    //   code: userCode,
-    //    }).then((res) => {
-    //   setUserCode(res.data.code);
-    // }).then(() => {
-    //   setLoading(false);
-    // })
-  }
+  } 
+  
 
 
   // Function to clear the output screen
