@@ -22,22 +22,17 @@ const Navbar = ({userLang, setUserLang, userTheme,
     return (
         <div className="navbar">
             <h1>Online Code Compiler</h1>
-            <Select options={languages} value={userLang}
-                    onChange={(e) => setUserLang(e.value)}
-                    placeholder={userLang} />
-            <Select options={themes} value={userTheme}
-                    onChange={(e) => setUserTheme(e.value)}
-                    placeholder={userTheme} />
-
-    <div>
+           
+        <div>
       <FormControl color='primary' >
-        <InputLabel id="demo-simple-select-label" color='primary'  >Mode</InputLabel>
+        <InputLabel id="demo-simple-select-label" color='primary' sx={{
+    color: '#ee4c49' }} >Language</InputLabel>
         <Select1 className="demo-simple-select-label dropdown"
           labelId="demo-simple-select"
           id="dropmodeselect"
-          value={userTheme}
-          onChange={(e) => setUserTheme(e.target.value)}
-          
+          value={userLang}
+          onChange={(e) => setUserLang(e.target.value)}
+          sx={{color: '#ee4c49' }} 
           label="Mode"MenuProps={{
             
             PaperProps: {
@@ -50,8 +45,38 @@ const Navbar = ({userLang, setUserLang, userTheme,
             },
           }}
         >
-          <MenuItem value={"vs-dark"}>Dark</MenuItem>
-          <MenuItem value={"light"}>Light</MenuItem>
+          <MenuItem value={"c"} sx={{color: '#ee4c49' }} >C</MenuItem>
+          <MenuItem value={"cpp"} sx={{color: '#ee4c49' }} >C++</MenuItem>
+          <MenuItem value={"python"} sx={{color: '#ee4c49' }} >Python</MenuItem>
+          <MenuItem value={"java"} sx={{color: '#ee4c49' }} >Java</MenuItem>
+        </Select1>
+      </FormControl>
+    </div>  
+
+    <div>
+      <FormControl color='primary' >
+        <InputLabel id="demo-simple-select-label" color='primary' sx={{
+    color: '#ee4c49' }} >Mode</InputLabel>
+        <Select1 className="demo-simple-select-label dropdown"
+          labelId="demo-simple-select"
+          id="dropmodeselect"
+          value={userTheme}
+          onChange={(e) => setUserTheme(e.target.value)}
+          sx={{color: '#ee4c49' }} 
+          label="Mode"MenuProps={{
+            
+            PaperProps: {
+              sx: {
+                bgcolor: '#474747',
+                '& .MuiMenuItem-root': {
+                  padding: 2,
+                },
+              },
+            },
+          }}
+        >
+          <MenuItem value={"vs-dark"} sx={{color: '#ee4c49' }} >Dark</MenuItem>
+          <MenuItem value={"light"} sx={{color: '#ee4c49' }} >Light</MenuItem>
         </Select1>
       </FormControl>
     </div>      
@@ -66,3 +91,11 @@ const Navbar = ({userLang, setUserLang, userTheme,
 }
  
 export default Navbar
+
+/* <div>
+          <Select options={languages} value={userLang}
+                    onChange={(e) => setUserLang(e.value)}
+                    placeholder={userLang} />
+            <Select options={themes} value={userTheme}
+                    onChange={(e) => setUserTheme(e.value)}
+                    placeholder={userTheme} /> </div> */

@@ -5,9 +5,9 @@ import Navbar from './components/Navbar';
 import Axios from 'axios';
 import spinner from './spinner.svg';
 import beautify from 'beautify';
- 
+
 function App() {
- 
+  
   // State variable to set users source code
   const [userCode, setUserCode] = useState(``);
  
