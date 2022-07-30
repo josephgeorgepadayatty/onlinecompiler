@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+
+.MuiButton-containedPrimary{
+  color: #ee4c49;
+}
+
+@font-face {
+  font-family: 'Myriad Pro Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Myriad Pro Regular'), url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap") ;
+}

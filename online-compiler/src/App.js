@@ -5,7 +5,7 @@ import Navbar from './components/Navbar';
 import Axios from 'axios';
 import spinner from './spinner.svg';
 import beautify from 'beautify';
-
+import Button from '@mui/material/Button';
 function App() {
   
   // State variable to set users source code
@@ -87,21 +87,19 @@ function App() {
             defaultValue="# Enter your code here"
             onChange={(value) => { setUserCode(value) }}
           />
-          <button className="run-btn" onClick={() => compile()}>
-             Run
-          </button>
-          <button className="beautify-btn"  onClick={() => beautify_fun()}>
-          Beautify
-          </button>
+        
+          <div className='run-btn'>
+              <Button variant='contained' size='large' color='error' onClick={() => compile()}>Run</Button></div>
+        
         </div>
         <div className="right-container">
-          <h4>Input:</h4>
+          <h4 className='style1'>Input:</h4>
           <div className="input-box">
             <textarea id="code-inp" onChange=
               {(e) => setUserInput(e.target.value)}>
             </textarea>
           </div>
-          <h4>Output:</h4>
+          <h4 className='style1'>Output:</h4>
           {loading ? (
             <div className="spinner-box">
               <img src={spinner} alt="Loading..." />
@@ -109,10 +107,8 @@ function App() {
           ) : (
             <div className="output-box">
               <pre>{userOutput}</pre>
-              <button onClick={() => { clearOutput() }}
-                 className="clear-btn">
-                 Clear
-              </button>
+              <div className='clear-btn'>
+              <Button variant='contained' size='large' color='error' onClick={() => { clearOutput() }}>Clear</Button></div>
             </div>
           )}
         </div>

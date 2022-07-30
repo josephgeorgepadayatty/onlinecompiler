@@ -1,6 +1,6 @@
 import React from 'react';
-import Select from 'react-select';
 import './Navbar.css';
+import './fonts.css';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
@@ -21,12 +21,12 @@ const Navbar = ({userLang, setUserLang, userTheme,
   
     return (
         <div className="navbar">
-            <h1>Online Code Compiler</h1>
+            <h1 className='style1'>Online Code Compiler</h1>
            
         <div>
-      <FormControl color='primary' >
+      <FormControl color='primary' className='formbox' >
         <InputLabel id="demo-simple-select-label" color='primary' sx={{
-    color: '#ee4c49' }} >Language</InputLabel>
+    color: '#ee4c49' }} >Lang</InputLabel>
         <Select1 className="demo-simple-select-label dropdown"
           labelId="demo-simple-select"
           id="dropmodeselect"
@@ -54,7 +54,7 @@ const Navbar = ({userLang, setUserLang, userTheme,
     </div>  
 
     <div>
-      <FormControl color='primary' >
+      <FormControl color='primary'>
         <InputLabel id="demo-simple-select-label" color='primary' sx={{
     color: '#ee4c49' }} >Mode</InputLabel>
         <Select1 className="demo-simple-select-label dropdown"
@@ -82,7 +82,7 @@ const Navbar = ({userLang, setUserLang, userTheme,
     </div>      
   
 
-            <label>Font Size</label>
+            <label><h5 className='style2'>Font Size</h5></label>
             <input type="range"  min="18" max="30" 
                    value={fontSize} step="2"
                    onChange={(e) => { setFontSize(e.target.value)}}/>
